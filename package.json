@@ -1,0 +1,33 @@
+{
+  "name": "@meom/accordion",
+  "version": "0.1",
+  "description": "MEOM Accordion",
+  "homepage": "https://github.com/MEOM/accordion",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MEOM/accordion"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "compress": "gzip -9 -fkc dist/index.min.js > dist/index.min.js.gz",
+    "show": "ls -lh dist/index.min.js.gz | awk '{print \"Gzipped script size:\", $5\"B\"}'",
+    "size": "npm run build -- --silent && npm run compress --silent && npm run show && rm dist/index.min.js.gz"
+  },
+  "keywords": [
+    "accordion"
+  ],
+  "author": "MEOM",
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^24",
+    "@rollup/plugin-node-resolve": "^15",
+    "@wordpress/eslint-plugin": "^14",
+    "@wordpress/prettier-config": "^2",
+    "eslint": "^8",
+    "rollup": "^2",
+    "rollup-plugin-terser": "^7"
+  }
+}
